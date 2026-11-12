@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #030509;
+  --cyan: #22d3ee;
+  --blue: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: #e2e8f0;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Thin grid overlay */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center top;
+}
+
+/* Soft radial glow blobs */
+.glow-cyan {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 0%,
+    rgba(34, 211, 238, 0.12),
+    transparent 70%
+  );
+}
+
+.glow-blue {
+  background: radial-gradient(
+    ellipse 50% 35% at 80% 20%,
+    rgba(59, 130, 246, 0.1),
+    transparent 65%
+  );
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Typewriter caret */
+.caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  background: #22d3ee;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1.05s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Focus ring for a11y */
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: #f0fdfa;
+}
+
+/* Tab panel transition */
+.tab-panel {
+  animation: fadeIn 0.28s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Severity badges */
+.badge-critical {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.badge-high {
+  background: rgba(234, 179, 8, 0.12);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.35);
+}
+
+.badge-medium {
+  background: rgba(34, 211, 238, 0.12);
+  color: #67e8f9;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
